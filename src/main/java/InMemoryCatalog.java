@@ -5,6 +5,7 @@ import java.util.function.BiFunction;
 import static java.util.stream.Collectors.toMap;
 
 public class InMemoryCatalog implements PriceQuery {
+    //private  final List<ItemReference> itemReferences;
     private final Map<String, Price> unitPriceItemMap;
 
     InMemoryCatalog(List<ItemReference> itemReferences) {
@@ -19,7 +20,15 @@ public class InMemoryCatalog implements PriceQuery {
         return Resultat.notFound(itemCode);
     }
 
-
+    /*
+         public Resultat findPrice(String itemCode) {
+       return itemReferences.stream()
+               .filter(itemReference -> itemReference.matchTheItemCode(itemCode))
+               .map(ItemReference::getUnitPrice)
+               .map(Resultat::found)
+               .findFirst().orElseGet(()->Resultat.notFound(itemCode));
+               }
+         */
     private <R, T> R reduce(R identity, BiFunction<R, T, R> reducer, Iterable<T> values) {
         R accumulator = identity;
         for (T value : values) {
