@@ -1,9 +1,8 @@
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CashRegisterTest {
@@ -27,7 +26,7 @@ public class CashRegisterTest {
         List<ItemReference> itemReferences = new ArrayList<>();
         itemReferences.add(itemReference1);
         itemReferences.add(itemReference2);
-        PriceQuery priceQuery = new InmemoryCatalog(itemReferences);
+        PriceQuery priceQuery = new InMemoryCatalog(itemReferences);
 
         String itemCode = "APPLE";
         double unitPrice= 1.2;
@@ -43,7 +42,7 @@ public class CashRegisterTest {
         itemReferences.add(itemReference1);
         itemReferences.add(itemReference2);
 
-        PriceQuery priceQuery = new InmemoryCatalog(itemReferences);
+        PriceQuery priceQuery = new InMemoryCatalog(itemReferences);
 
         String itemCode = "BANNANA";
         double unitPrice= 1.9;
@@ -62,7 +61,7 @@ public class CashRegisterTest {
         itemReferences.add(itemReference2);
         itemReferences.add(itemReference3);
 
-        PriceQuery priceQuery = new InmemoryCatalog(itemReferences);
+        PriceQuery priceQuery = new InMemoryCatalog(itemReferences);
 
         String itemCode = "FRUITS";
 
@@ -81,7 +80,7 @@ public class CashRegisterTest {
         itemReferences.add(itemReference2);
         itemReferences.add(itemReference3);
 
-        PriceQuery priceQuery = new InmemoryCatalog(itemReferences);
+        PriceQuery priceQuery = new InMemoryCatalog(itemReferences);
         String itemCode = "PEACH";
 
         CashRegister cashRegister = new CashRegister();
@@ -105,7 +104,7 @@ public class CashRegisterTest {
         itemReferences.add(itemReference2);
         itemReferences.add(itemReference3);
 
-        PriceQuery priceQuery = new InmemoryCatalog(itemReferences);
+        PriceQuery priceQuery = new InMemoryCatalog(itemReferences);
         String itemCode = "FRUIT";
 
         CashRegister cashRegister = new CashRegister();

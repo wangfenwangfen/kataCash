@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6ed772b3-7212-4761-b0cb-59ed72e08158" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InmemoryCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InmemoryCatalog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InmemoryCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InMemoryCatalog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ItemReference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ItemReference.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/CashRegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CashRegisterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/InmemoryCatalog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/InmemoryCatalog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/CashRegisterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/CashRegisterTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,19 +24,14 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.33489934">
+    <splitter split-orientation="horizontal" split-proportion="0.6825503">
       <split-first>
         <leaf>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/InmemoryCatalog.java">
+            <entry file="file://$PROJECT_DIR$/src/main/java/InMemoryCatalog.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="177">
-                  <caret line="30" column="38" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#974#975#0" expanded="true" />
-                    <element signature="e#1026#1027#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="23">
+                  <caret line="1" column="21" lean-forward="true" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
                 </state>
               </provider>
             </entry>
@@ -74,15 +72,28 @@
               </provider>
             </entry>
           </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/ItemReference.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="207">
+                  <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+                  <folding>
+                    <element signature="e#277#278#0" expanded="true" />
+                    <element signature="e#329#330#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-first>
       <split-second>
         <leaf>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/test/java/CashRegisterTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="116">
-                  <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+                <state relative-caret-position="-180">
+                  <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -90,11 +101,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/PriceQuery.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="17" selection-start-column="17" selection-end-column="17" />
+                <state relative-caret-position="69">
+                  <caret line="3" selection-start-line="3" selection-end-line="3" />
                 </state>
               </provider>
             </entry>
@@ -125,14 +136,15 @@
         <option value="$PROJECT_DIR$/src/main/java/PriceQuery/PriceQuery.java" />
         <option value="$PROJECT_DIR$/src/main/java/Quantity.java" />
         <option value="$PROJECT_DIR$/src/main/java/Price.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ItemReference.java" />
         <option value="$PROJECT_DIR$/src/main/java/Resultat/Resultat.java" />
         <option value="$PROJECT_DIR$/src/main/java/Found.java" />
-        <option value="$PROJECT_DIR$/src/main/java/PriceQuery.java" />
         <option value="$PROJECT_DIR$/src/main/java/CashRegister.java" />
         <option value="$PROJECT_DIR$/src/main/java/Resultat.java" />
-        <option value="$PROJECT_DIR$/src/main/java/InmemoryCatalog.java" />
         <option value="$PROJECT_DIR$/src/test/java/CashRegisterTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ItemReference.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PriceQuery.java" />
+        <option value="$PROJECT_DIR$/src/main/java/InmemoryCatalog.java" />
+        <option value="$PROJECT_DIR$/src/main/java/InMemoryCatalog.java" />
       </list>
     </option>
   </component>
@@ -188,7 +200,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556107347787" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556110476869" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../socratesfr" />
   </component>
   <component name="RecentsManager">
@@ -314,40 +326,56 @@
       <option name="project" value="LOCAL" />
       <updated>1556096433458</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="refactor using reduce">
+      <created>1556107354368</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1556107354368</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CashRegisterTest - 2019.04.24 at 10h 51m 06s.xml">
+    <history-entry file="CashRegisterTest_search_an_unKnown_item - 2019.04.24 at 14h 00m 49s.xml">
+      <configuration name="CashRegisterTest.search_an_unKnown_item" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CashRegisterTest - 2019.04.24 at 14h 00m 51s.xml">
       <configuration name="CashRegisterTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CashRegisterTest - 2019.04.24 at 10h 51m 50s.xml">
+    <history-entry file="CashRegisterTest - 2019.04.24 at 14h 01m 12s.xml">
       <configuration name="CashRegisterTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CashRegisterTest - 2019.04.24 at 10h 51m 58s.xml">
+    <history-entry file="CashRegisterTest - 2019.04.24 at 14h 02m 26s.xml">
       <configuration name="CashRegisterTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CashRegisterTest - 2019.04.24 at 10h 52m 33s.xml">
+    <history-entry file="CashRegisterTest - 2019.04.24 at 14h 02m 29s.xml">
       <configuration name="CashRegisterTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CashRegisterTest_total_not_found_when_item_not_found - 2019.04.24 at 10h 59m 09s.xml">
-      <configuration name="CashRegisterTest.total_not_found_when_item_not_found" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CashRegisterTest - 2019.04.24 at 10h 59m 17s.xml">
+    <history-entry file="CashRegisterTest - 2019.04.24 at 14h 34m 11s.xml">
       <configuration name="CashRegisterTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CashRegisterTest - 2019.04.24 at 10h 59m 27s.xml">
+    <history-entry file="CashRegisterTest - 2019.04.24 at 14h 35m 04s.xml">
       <configuration name="CashRegisterTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CashRegisterTest - 2019.04.24 at 11h 17m 06s.xml">
+    <history-entry file="CashRegisterTest - 2019.04.24 at 14h 37m 59s.xml">
       <configuration name="CashRegisterTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CashRegisterTest - 2019.04.24 at 11h 21m 02s.xml">
+    <history-entry file="CashRegisterTest - 2019.04.24 at 14h 42m 46s.xml">
       <configuration name="CashRegisterTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CashRegisterTest - 2019.04.24 at 11h 40m 07s.xml">
+    <history-entry file="CashRegisterTest - 2019.04.24 at 14h 42m 58s.xml">
       <configuration name="CashRegisterTest" configurationId="JUnit" />
     </history-entry>
+  </component>
+  <component name="TodoView" selected-index="4">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="0" />
@@ -361,12 +389,12 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" weight="0.3295302" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32918397" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26556018" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32918397" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32918397" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50053304" side_tool="true" weight="0.3299075" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49946696" weight="0.32918397" />
@@ -439,7 +467,8 @@
     <MESSAGE value="find price by itemCode and search an unknown item" />
     <MESSAGE value="refactor calculate Total and find price by itemCode and search an unknown item" />
     <MESSAGE value="total is product of quantity by item price correspond and total not found when item not found" />
-    <option name="LAST_COMMIT_MESSAGE" value="total is product of quantity by item price correspond and total not found when item not found" />
+    <MESSAGE value="refactor using reduce" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor using reduce" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -499,37 +528,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ItemReference.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding>
-            <element signature="e#258#259#0" expanded="true" />
-            <element signature="e#289#290#0" expanded="true" />
-            <element signature="e#324#325#0" expanded="true" />
-            <element signature="e#356#357#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/Map.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="203" column="43" lean-forward="true" selection-start-line="203" selection-start-column="43" selection-end-line="203" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/PriceQuery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CashRegister.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
@@ -558,25 +560,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/InmemoryCatalog.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ItemReference.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="30" column="38" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
+        <state relative-caret-position="207">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#974#975#0" expanded="true" />
-            <element signature="e#1026#1027#0" expanded="true" />
+            <element signature="e#277#278#0" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CashRegister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/CashRegisterTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="-180">
+          <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PriceQuery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/InMemoryCatalog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="21" lean-forward="true" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
         </state>
       </provider>
     </entry>
