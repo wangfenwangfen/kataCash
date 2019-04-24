@@ -1,3 +1,3 @@
 public interface PriceQuery {
-    Price findPrice(String itemCode);
+    Resultat findPrice(String itemCode);
 }

@@ -1,11 +1,13 @@
 import java.util.Map;
 
 public class InmemoryCatalog implements PriceQuery {
-    private Map<String, Price> itemReferences;
+    private final Map<String, Price> itemReferences;
 
-    public Price findPrice(String itemCode) {
+    public Resultat findPrice(String itemCode) {
 
-        return itemReferences.get(itemCode);
+        if (itemReferences.get(itemCode) == null)
+            return  Resultat.notFound(itemCode);
+        return Resultat.found(itemReferences.get(itemCode));
     }
 
     InmemoryCatalog(Map<String, Price> itemReferences) {

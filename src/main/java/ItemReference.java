@@ -1,6 +1,6 @@
 class ItemReference {
-    private String itemCode;
-    private Price unitPrice;
+    private final String itemCode;
+    private final Price unitPrice;
 
     ItemReference(String itemCode, Price unitPrice) {
         this.itemCode = itemCode;

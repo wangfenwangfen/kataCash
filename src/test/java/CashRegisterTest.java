@@ -1,14 +1,9 @@
-
-import org.junit.Ignore;
 import org.junit.Test;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CashRegisterTest {
-    @Ignore
     @Test
     public void calculateTotal_if_quantity_is_Zero() {
 
@@ -16,22 +11,9 @@ public class CashRegisterTest {
         Price price = Price.valueOf(1.20);
         Quantity quantity = Quantity.valueOf(0);
 
-        Price total = cashRegister.total(price, quantity);
-
-        assertThat(total).isEqualTo((Price.valueOf(0)));
-    }
-
-    @Ignore
-    @Test
-    public void calculateTotal_if_quantity_is_negative() {
-
-        CashRegister cashRegister = new CashRegister();
-        Price price = Price.valueOf(1.20);
-        Quantity quantity = Quantity.valueOf(-1);
-
         Price result = cashRegister.total(price, quantity);
 
-       assertThat(result).isEqualTo(Price.valueOf(0));
+        assertThat(result).isEqualTo(Price.valueOf(0));
     }
 
     @Test
@@ -40,7 +22,6 @@ public class CashRegisterTest {
         CashRegister cashRegister = new CashRegister();
         Price price = Price.valueOf(1.20);
         Quantity quantity = Quantity.valueOf(1);
-
 
         Price result = cashRegister.total(price, quantity);
 
@@ -59,7 +40,7 @@ public class CashRegisterTest {
         String itemCode = "APPLE";
         double unitPrice= 1.2;
 
-        assertThat(priceQuery.findPrice(itemCode)).isEqualTo(Price.valueOf(unitPrice));
+        assertThat(priceQuery.findPrice(itemCode)).isEqualTo(Resultat.found(Price.valueOf(unitPrice)));
     }
 
     @Test
@@ -74,7 +55,7 @@ public class CashRegisterTest {
         String itemCode = "BANNANA";
         double unitPrice= 1.9;
 
-        assertThat(priceQuery.findPrice(itemCode)).isEqualTo(Price.valueOf(unitPrice));
+        assertThat(priceQuery.findPrice(itemCode)).isEqualTo(Resultat.found(Price.valueOf(unitPrice)));
     }
 
     @Test
@@ -88,6 +69,6 @@ public class CashRegisterTest {
 
         String itemCode = "PEACH";
 
-        assertThat(priceQuery.findPrice(itemCode)).isNull();
+        assertThat(priceQuery.findPrice(itemCode)).isEqualTo(Resultat.notFound(itemCode));
     }
 }
