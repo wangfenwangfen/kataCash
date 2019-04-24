@@ -4,35 +4,24 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CashRegisterTest {
-    @Test
-    public void calculateTotal_if_quantity_is_Zero() {
-
-        CashRegister cashRegister = new CashRegister();
-        Price price = Price.valueOf(1.20);
-        Quantity quantity = Quantity.valueOf(0);
-
-        Price result = cashRegister.total(price, quantity);
-
-        assertThat(result).isEqualTo(Price.valueOf(0));
-    }
 
     @Test
     public void calculateTotal_if_quantity_is_bigger_than_zero() {
 
         CashRegister cashRegister = new CashRegister();
-        Price price = Price.valueOf(1.20);
+        Resultat price = Resultat.found(Price.valueOf(1.20));
         Quantity quantity = Quantity.valueOf(1);
 
-        Price result = cashRegister.total(price, quantity);
+        Resultat total = cashRegister.total(price, quantity);
 
-        assertThat(result).isEqualTo(Price.valueOf(1.2));
+        assertThat(total).isEqualTo(Resultat.found(Price.valueOf(1.2)));
     }
 
     @Test
     public void find_the_price_by_given_an_item_code_apple() {
         ItemReference itemReference1 = new ItemReference("APPLE", Price.valueOf(1.2));
         ItemReference itemReference2 = new ItemReference("BANNANA", Price.valueOf(1.9));
-        Map<String, Price> itemReferences = new HashMap<String, Price>();
+        Map<String, Price> itemReferences = new HashMap<>();
         itemReferences.put(itemReference1.getItemCode(), itemReference1.getUnitPrice());
         itemReferences.put(itemReference2.getItemCode(), itemReference2.getUnitPrice());
         PriceQuery priceQuery = new InmemoryCatalog(itemReferences);
@@ -47,7 +36,7 @@ public class CashRegisterTest {
     public void find_the_price_by_given_an_item_code_bannana() {
         ItemReference itemReference1 = new ItemReference("APPLE", Price.valueOf(1.2));
         ItemReference itemReference2 = new ItemReference("BANNANA", Price.valueOf(1.9));
-        Map<String, Price> itemReferences = new HashMap<String, Price>();
+        Map<String, Price> itemReferences = new HashMap<>();
         itemReferences.put(itemReference1.getItemCode(), itemReference1.getUnitPrice());
         itemReferences.put(itemReference2.getItemCode(), itemReference2.getUnitPrice());
         PriceQuery priceQuery = new InmemoryCatalog(itemReferences);
@@ -62,13 +51,61 @@ public class CashRegisterTest {
     public void search_an_unKnown_item() {
         ItemReference itemReference1 = new ItemReference("APPLE", Price.valueOf(1.2));
         ItemReference itemReference2 = new ItemReference("BANNANA", Price.valueOf(1.9));
-        Map<String, Price> itemReferences = new HashMap<String, Price>();
+        Map<String, Price> itemReferences = new HashMap<>();
         itemReferences.put(itemReference1.getItemCode(), itemReference1.getUnitPrice());
         itemReferences.put(itemReference2.getItemCode(), itemReference2.getUnitPrice());
         PriceQuery priceQuery = new InmemoryCatalog(itemReferences);
 
-        String itemCode = "PEACH";
+        String itemCode = "FRUITS";
 
         assertThat(priceQuery.findPrice(itemCode)).isEqualTo(Resultat.notFound(itemCode));
     }
+
+    @Test
+    public void total_is_product_of_quantity_by_item_price_corresponding_to_existing_item_code() {
+
+        ItemReference itemReference1 = new ItemReference("APPLE", Price.valueOf(1.2));
+        ItemReference itemReference2 = new ItemReference("BANNANA", Price.valueOf(1.9));
+        ItemReference itemReference3 = new ItemReference("PEACH", Price.valueOf(1.5));
+
+        Map<String, Price> itemReferences = new HashMap<>();
+        itemReferences.put(itemReference1.getItemCode(), itemReference1.getUnitPrice());
+        itemReferences.put(itemReference2.getItemCode(), itemReference2.getUnitPrice());
+        itemReferences.put(itemReference3.getItemCode(), itemReference3.getUnitPrice());
+
+        PriceQuery priceQuery = new InmemoryCatalog(itemReferences);
+        String itemCode = "PEACH";
+
+        CashRegister cashRegister = new CashRegister();
+
+        double unitPrice = 1.5;
+        int quantity = 10;
+        Resultat total = cashRegister.total(priceQuery.findPrice(itemCode), Quantity.valueOf(quantity));
+
+        assertThat(total).isEqualTo(Resultat.found(Price.valueOf(quantity*unitPrice)));
+    }
+
+    @Test
+    public void total_not_found_when_item_not_found() {
+
+        ItemReference itemReference1 = new ItemReference("APPLE", Price.valueOf(1.2));
+        ItemReference itemReference2 = new ItemReference("BANNANA", Price.valueOf(1.9));
+        ItemReference itemReference3 = new ItemReference("PEACH", Price.valueOf(1.5));
+
+        Map<String, Price> itemReferences = new HashMap<>();
+        itemReferences.put(itemReference1.getItemCode(), itemReference1.getUnitPrice());
+        itemReferences.put(itemReference2.getItemCode(), itemReference2.getUnitPrice());
+        itemReferences.put(itemReference3.getItemCode(), itemReference3.getUnitPrice());
+
+        PriceQuery priceQuery = new InmemoryCatalog(itemReferences);
+        String itemCode = "FRUIT";
+
+        CashRegister cashRegister = new CashRegister();
+
+        int quantity = 10;
+        Resultat total = cashRegister.total(priceQuery.findPrice(itemCode), Quantity.valueOf(quantity));
+
+        assertThat(total).isEqualTo(Resultat.notFound(itemCode));
+    }
+
 }

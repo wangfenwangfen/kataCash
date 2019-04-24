@@ -1,4 +1,8 @@
+import java.util.function.UnaryOperator;
+
 abstract class Resultat {
+
+    abstract  Resultat map(UnaryOperator<Price> f);
 
     static Resultat found(Price price) {
         return new Found(price);
@@ -15,6 +19,11 @@ abstract class Resultat {
         }
 
        @Override
+       Resultat map(UnaryOperator<Price> f) {
+           return found(f.apply(price));
+       }
+
+       @Override
        public boolean equals(Object o) {
            if (this == o) return true;
            if (o == null || getClass() != o.getClass()) return false;
@@ -28,6 +37,7 @@ abstract class Resultat {
        public int hashCode() {
            return price != null ? price.hashCode() : 0;
        }
+
    }
 
     private static  class NotFound extends  Resultat{
@@ -35,6 +45,11 @@ abstract class Resultat {
 
         private  NotFound(String invalideItemCode){
             this.invalideItemCode = invalideItemCode;
+        }
+
+        @Override
+        Resultat map(UnaryOperator<Price> f) {
+            return this;
         }
 
         @Override

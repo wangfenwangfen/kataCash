@@ -1,7 +1,8 @@
 
 class CashRegister {
 
-    Price total(Price price, Quantity quantity) {
-            return  price.multiplyBy(quantity);
+    Resultat total(Resultat resultat, Quantity quantity) {
+
+        return  resultat.map(price -> price.multiplyBy(quantity));
     }
 }
