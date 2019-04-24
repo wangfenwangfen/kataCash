@@ -1,8 +1,12 @@
+import java.util.Objects;
+import java.util.function.Consumer;
 import java.util.function.UnaryOperator;
 
 abstract class Resultat {
 
     abstract  Resultat map(UnaryOperator<Price> f);
+    abstract void ifFound(Consumer<Price> consumer);
+    abstract void ifNotFound(Consumer<String> consumer);
 
     static Resultat found(Price price) {
         return new Found(price);
@@ -24,13 +28,23 @@ abstract class Resultat {
        }
 
        @Override
+       void ifFound(Consumer<Price> consumer) {
+           consumer.accept(price);
+       }
+
+       @Override
+       void ifNotFound(Consumer<String> consumer) {
+
+       }
+
+       @Override
        public boolean equals(Object o) {
            if (this == o) return true;
            if (o == null || getClass() != o.getClass()) return false;
 
            Found found = (Found) o;
 
-           return price != null ? price.equals(found.price) : found.price == null;
+           return Objects.equals(price, found.price);
        }
 
        @Override
@@ -53,13 +67,23 @@ abstract class Resultat {
         }
 
         @Override
+        void ifFound(Consumer<Price> consumer) {
+
+        }
+
+        @Override
+        void ifNotFound(Consumer<String> consumer) {
+            consumer.accept(invalideItemCode);
+        }
+
+        @Override
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
 
             NotFound notFound = (NotFound) o;
 
-            return invalideItemCode != null ? invalideItemCode.equals(notFound.invalideItemCode) : notFound.invalideItemCode == null;
+            return Objects.equals(invalideItemCode, notFound.invalideItemCode);
         }
 
         @Override

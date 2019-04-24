@@ -86,10 +86,11 @@ public class CashRegisterTest {
         CashRegister cashRegister = new CashRegister();
 
         double unitPrice = 1.5;
-        int quantity = 10;
+        int quantity = 9;
         Resultat total = cashRegister.total(priceQuery.findPrice(itemCode), Quantity.valueOf(quantity));
 
         assertThat(total).isEqualTo(Resultat.found(Price.valueOf(quantity*unitPrice)));
+        total.ifFound(System.out ::println);
     }
 
     @Test
@@ -109,9 +110,10 @@ public class CashRegisterTest {
 
         CashRegister cashRegister = new CashRegister();
 
-        int quantity = 10;
+        int quantity = 9;
         Resultat total = cashRegister.total(priceQuery.findPrice(itemCode), Quantity.valueOf(quantity));
 
         assertThat(total).isEqualTo(Resultat.notFound(itemCode));
+        total.ifNotFound(System.out ::println);
     }
 }
