@@ -1,5 +1,8 @@
 import org.junit.Test;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -21,9 +24,9 @@ public class CashRegisterTest {
     public void find_the_price_by_given_an_item_code_apple() {
         ItemReference itemReference1 = new ItemReference("APPLE", Price.valueOf(1.2));
         ItemReference itemReference2 = new ItemReference("BANNANA", Price.valueOf(1.9));
-        Map<String, Price> itemReferences = new HashMap<>();
-        itemReferences.put(itemReference1.getItemCode(), itemReference1.getUnitPrice());
-        itemReferences.put(itemReference2.getItemCode(), itemReference2.getUnitPrice());
+        List<ItemReference> itemReferences = new ArrayList<>();
+        itemReferences.add(itemReference1);
+        itemReferences.add(itemReference2);
         PriceQuery priceQuery = new InmemoryCatalog(itemReferences);
 
         String itemCode = "APPLE";
@@ -36,9 +39,10 @@ public class CashRegisterTest {
     public void find_the_price_by_given_an_item_code_bannana() {
         ItemReference itemReference1 = new ItemReference("APPLE", Price.valueOf(1.2));
         ItemReference itemReference2 = new ItemReference("BANNANA", Price.valueOf(1.9));
-        Map<String, Price> itemReferences = new HashMap<>();
-        itemReferences.put(itemReference1.getItemCode(), itemReference1.getUnitPrice());
-        itemReferences.put(itemReference2.getItemCode(), itemReference2.getUnitPrice());
+        List<ItemReference> itemReferences = new ArrayList<>();
+        itemReferences.add(itemReference1);
+        itemReferences.add(itemReference2);
+
         PriceQuery priceQuery = new InmemoryCatalog(itemReferences);
 
         String itemCode = "BANNANA";
@@ -51,9 +55,13 @@ public class CashRegisterTest {
     public void search_an_unKnown_item() {
         ItemReference itemReference1 = new ItemReference("APPLE", Price.valueOf(1.2));
         ItemReference itemReference2 = new ItemReference("BANNANA", Price.valueOf(1.9));
-        Map<String, Price> itemReferences = new HashMap<>();
-        itemReferences.put(itemReference1.getItemCode(), itemReference1.getUnitPrice());
-        itemReferences.put(itemReference2.getItemCode(), itemReference2.getUnitPrice());
+        ItemReference itemReference3 = new ItemReference("PEACH", Price.valueOf(1.5));
+
+        List<ItemReference> itemReferences = new ArrayList<>();
+        itemReferences.add(itemReference1);
+        itemReferences.add(itemReference2);
+        itemReferences.add(itemReference3);
+
         PriceQuery priceQuery = new InmemoryCatalog(itemReferences);
 
         String itemCode = "FRUITS";
@@ -68,10 +76,10 @@ public class CashRegisterTest {
         ItemReference itemReference2 = new ItemReference("BANNANA", Price.valueOf(1.9));
         ItemReference itemReference3 = new ItemReference("PEACH", Price.valueOf(1.5));
 
-        Map<String, Price> itemReferences = new HashMap<>();
-        itemReferences.put(itemReference1.getItemCode(), itemReference1.getUnitPrice());
-        itemReferences.put(itemReference2.getItemCode(), itemReference2.getUnitPrice());
-        itemReferences.put(itemReference3.getItemCode(), itemReference3.getUnitPrice());
+        List<ItemReference> itemReferences = new ArrayList<>();
+        itemReferences.add(itemReference1);
+        itemReferences.add(itemReference2);
+        itemReferences.add(itemReference3);
 
         PriceQuery priceQuery = new InmemoryCatalog(itemReferences);
         String itemCode = "PEACH";
@@ -92,10 +100,10 @@ public class CashRegisterTest {
         ItemReference itemReference2 = new ItemReference("BANNANA", Price.valueOf(1.9));
         ItemReference itemReference3 = new ItemReference("PEACH", Price.valueOf(1.5));
 
-        Map<String, Price> itemReferences = new HashMap<>();
-        itemReferences.put(itemReference1.getItemCode(), itemReference1.getUnitPrice());
-        itemReferences.put(itemReference2.getItemCode(), itemReference2.getUnitPrice());
-        itemReferences.put(itemReference3.getItemCode(), itemReference3.getUnitPrice());
+        List<ItemReference> itemReferences = new ArrayList<>();
+        itemReferences.add(itemReference1);
+        itemReferences.add(itemReference2);
+        itemReferences.add(itemReference3);
 
         PriceQuery priceQuery = new InmemoryCatalog(itemReferences);
         String itemCode = "FRUIT";
@@ -107,5 +115,4 @@ public class CashRegisterTest {
 
         assertThat(total).isEqualTo(Resultat.notFound(itemCode));
     }
-
 }
